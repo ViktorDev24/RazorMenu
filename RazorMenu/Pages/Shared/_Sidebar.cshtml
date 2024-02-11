@@ -1,0 +1,112 @@
+﻿<!-- _Sidebar.cshtml-->
+<link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
+
+<aside class="sidebar">
+	<nav width="10px">
+		<ul class="nav flex-column sidebar-menu">
+			<button class="flat-button"><i class="material-icons">home</i></button>
+			<button class="flat-button" id="dashboard-menu-btn"><i class="material-icons">bar_chart</i></button>
+			<div class="submenu" id="dashboard-submenu">
+				<div class="submenu-header"> Dashboards <button class="close-btn">&times;</button></div>
+					<a href="#" class="submenu-item active">Dashboard 1</a>
+					<a href="#" class="submenu-item">Dashboard 2</a>
+					<a href="#" class="submenu-item">Dashboard 3</a>
+					<a href="#" class="submenu-item">Dashboard 4</a>
+					<a href="#" class="submenu-item">Dashboard 5</a>
+					<a href="#" class="submenu-item">Dashboard 6</a>
+					<a href="#" class="submenu-item">Dashboard 7</a>
+					<a href="#" class="submenu-item">Dashboard 8</a>
+					<div class="submenu-footer">
+						<hr class="submenu-divider" />
+					<a href="#" class="new-dashboard-btn">NEW DASHBOARD<i class="material-icons">add</i></a>
+					</div>
+			</div>
+			<button class="flat-button" id="forms-menu-btn"><i class="material-icons">edit</i></button>
+			<div class="submenu" id="forms-submenu">
+				<div class="submenu-header"> Forms <button class="close-btn">&times;</button></div>
+				<a href="#" class="submenu-item">Form 1</a>
+				<a href="#" class="submenu-item">Form 2</a>
+				<a href="#" class="submenu-item">Form 3</a>
+				<a href="#" class="submenu-item">Form 4</a>
+				<a href="#" class="submenu-item">Form 5</a>
+				<a href="#" class="submenu-item">Form 6</a>
+				<a href="#" class="submenu-item">Form 7</a>
+				<a href="#" class="submenu-item">Form 8</a>
+				<a href="#" class="submenu-item">Form 9</a>
+				<a href="#" class="submenu-item">Form 10</a>
+			</div>
+			<button class="flat-button" id="reports-menu-btn"><i class="material-icons">description</i></button>
+			<div class="submenu" id="reports-submenu">
+				<div class="submenu-header"> Reports <button class="close-btn">&times;</button></div>
+				<a href="#" class="submenu-item">Pinned Reports</a>
+				<a href="#" class="submenu-item">Report Templates</a>
+				<a href="#" class="submenu-item">Scheduled Reports</a>
+				<a href="#" class="submenu-item">Report Builder</a>
+				<a href="#" class="submenu-item">Admin Reports</a>
+			</div>
+			<button class="flat-button" id="admin-menu-btn"><i class="material-icons">settings</i></button>
+			<div class="submenu" id="admin-submenu">
+				<div class="submenu-header"> Admin <button class="close-btn">&times;</button></div>
+				<a href="#" class="submenu-item">Admin Home</a>
+				<hr class="submenu-divider" />
+				<div class="submenu-header">HR</div>
+				<a href="#" class="submenu-item">Users</a>
+				<a href="#" class="submenu-item">Positions</a>
+				<a href="#" class="submenu-item">Proxies</a>
+				<a href="#" class="submenu-item">Teams</a>
+				<a href="#" class="submenu-item">Sites</a>
+				<a href="#" class="submenu-item">Places</a>
+				<a href="#" class="submenu-item">Profiles</a>
+				<hr class="submenu-divider" />
+				<a href="#" class="submenu-item">Profile Dashboard</a>
+				<hr class="submenu-divider" />
+				<div class="submenu-header">COMMS</div>
+				<a href="#" class="submenu-item">Email/SMS Templates</a>
+				<a href="#" class="submenu-item">Email Store</a>
+				<a href="#" class="submenu-item">System Messages</a>
+				<hr class="submenu-divider" />
+				<div class="submenu-header">FORM MANAGEMENT</div>
+				<a href="#" class="submenu-item">Forms</a>
+				<a href="#" class="submenu-item">Linked Forms</a>
+				<a href="#" class="submenu-item">Field Mapping</a>
+				<a href="#" class="submenu-item">Form Processing</a>
+				<a href="#" class="submenu-item">Import Data to Form</a>
+				<a href="#" class="submenu-item">API</a>
+				<hr class="submenu-divider" />
+				<div class="submenu-header">TABLES</div>
+				<a href="#" class="submenu-item">Lookup Tables</a>
+				<a href="#" class="submenu-item">Import Data to Table</a>
+				<hr class="submenu-divider" />
+				<div class="submenu-header">DATABASE MANAGEMENT</div>
+				<a href="#" class="submenu-item">Backup Database</a>
+				<a href="#" class="submenu-item">Sync Environments</a>
+				<a href="#" class="submenu-item">Sync TRIM</a>
+				<hr class="submenu-divider" />
+
+			</div>
+
+		</ul>
+	</nav>
+</aside>
+<script>
+	$(document).ready(function () {
+		var $submenus = $('.submenu');;
+		var $flatButtons = $('.flat-button');
+		
+		function resetMenu() {
+			$submenus.hide();
+			$flatButtons.removeClass("active");
+		}
+
+		$flatButtons.click(function () {
+			resetMenu();
+			$(this).next('.submenu').toggle();
+			$(this).toggleClass("active");
+		});
+
+		$('.close-btn').click(function () {
+			resetMenu();
+		});
+
+	});
+</script>

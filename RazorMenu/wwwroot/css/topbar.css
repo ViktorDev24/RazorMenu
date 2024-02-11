@@ -1,0 +1,108 @@
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    z-index: 1000;
+    box-shadow: none !important;
+    display:flex;
+   justify-content:space-between;
+   align-items:center;
+   background-color: #f8f9fa;
+   padding: 0 20px;
+      height:50px;
+}
+
+.branding {
+    background-color: #d0d0d0;
+    padding: 5px 25px;
+    margin-right: 15px;
+    font-size:10px;
+}
+.top-bar-section {
+    display: flex;
+    align-items:center;
+}
+
+    .top-bar-section.left, top-bar-section.right {
+        justify-content: flex-start;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+.top-bar-section.left,top-bar-section.center, top-bar-section.right{
+    flex: 1;
+}
+    .top-bar-section.center {
+        flex-grow: 2;
+        justify-content: center;
+        font-size: 12px;
+        display:flex;
+    }
+
+    .top-bar-section.right {
+        font-size: 12px;
+    }
+.icon-button {
+    background: none;
+    border: none;
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+}
+
+    .icon-button .material-icons {
+        font-size: 16px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+.add-record-modal-body {
+    height:400px;
+}
+
+#addRecordModal .modal-dialog {
+    max-width: 400px;
+    margin: 1.75rem auto;
+}
+
+#addRecordModal .modal-title, #searchRecordModal .modal-title, #widgetSearchModal .modal-title {
+    font-size: 14px;
+}
+
+#searchRecordModal .modal-body {
+    height:70px;
+}
+#searchRecordModal .modal-dialog {
+    max-width: 350px;
+}
+#searchRecordModal .modal-footer .btn-secondary, #widgetSearchModal .modal-footer .btn-secondary {
+    background-color: white;
+    color: black;
+}
+    #searchRecordModal .modal-footer .btn-secondary:hover, #widgetSearchModal .modal-footer .btn-secondary:hover {
+        background-color: #d9d9d9;
+        border-color: #d9d9d9;
+    }
+
+#searchRecordModal .modal-footer .btn-primary, #widgetSearchModal .modal-footer .btn-primary {
+    background-color: #0056f6;
+}
+    #searchRecordModal .modal-footer .btn-primary:hover, #widgetSearchModal .modal-footer .btn-primary:hover {
+        background-color: #00259e
+    }
+.modal-header .close-btn:hover {
+    background: none;
+}
+
+.no-cursor {
+    cursor:default !important;
+}
+
+.name-role-title {
+    margin-right: 15px;
+    background: white;
+    border: none;
+    padding: 5px;
+}

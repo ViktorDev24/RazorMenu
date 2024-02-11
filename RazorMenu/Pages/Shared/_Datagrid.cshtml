@@ -1,0 +1,108 @@
+﻿<!-- _Sidebar.cshtml-->
+<link rel="stylesheet" href="~/css/widget.css" asp-append-version="true" />
+
+<div class="widget">
+    <div class="widget-header">
+        <div class="widget-title">
+            <h6>Widget Title</h6>
+            <span>10 Records</span>
+        </div>
+        <div class="widget-actions">
+            <button class="widget-action-button"><i class="material-icons">add</i></button>
+            <button class="widget-action-button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="#fieldListsModal"><i class="material-icons">view_column</i></button>
+            <ul class="dropdown-menu dropdown-menu-lg-start" aria-labelledby="fieldListsModal">
+                <li><h6 class="dropdownItemBlack fw-bold dropdown-header" href="#">Field Lists(Views)</h6></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item dropdownItemBlack active" href="#">Layout 1</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Layout 2</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Layout 3</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Layout 4</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Layout 5</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                    <a href="#" class=" dropdown-item dropdownItemBlack new-dashboard-btn create-new-btn">CREATE NEW<i class="material-icons">add</i></a>
+                </li>
+            </ul>
+            <button class="widget-action-button"><i class="material-icons">filter_alt</i></button>
+            <button class="widget-action-button" id="datagridSettingsDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
+
+            <ul class="dropdown-menu dropdown-menu-lg-start" aria-labelledby="datagridSettingsDropdownMenu">
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Widget Settings</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Form Design</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Export</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Print to Excel</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Import</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Manage Field Lists(Views)</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Totals</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Reports</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Delete Widget</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="widget-body">
+        <div class="data-grid-chart">
+            <p>Data Grid/Chart</p>
+        </div>
+
+    </div>
+    <div class="widget-footer d-flex justify-content-between align-items-center">
+        <div>
+            <button class="widget-action-button" data-bs-toggle="modal" data-bs-target="#widgetSearchModal"><i class="material-icons">search</i></button>
+            <button class="widget-action-button" id="editWidgetDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">edit</i></button>
+
+            <ul class="dropdown-menu dropdown-menu-lg-start" aria-labelledby="editWidgetDropdownMenu">
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-green"></span>Open</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-gray"></span>Close</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-light-gray"></span>Archive</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-blue"></span>Draft</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-yellow"></span>Pending Approval</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-red"></span>Reject</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-light-green"></span>Re-submit</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#"><span class="dot dot-brown"></span>Delete</a></li>
+            </ul>
+            <button class="widget-action-button" id="recordSettingsDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">description</i></button>
+
+            <ul class="dropdown-menu dropdown-menu-lg-start" aria-labelledby="recordSettingsDropdownMenu">
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Copy record</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Add links</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Print record report</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Recalculate (emails will be sent to the store)</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Run autolinks</a></li>
+                <li><hr class="dropdown-divider" /></li>
+
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Check-in record</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Check-out record</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Pin record to home</a></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">Un-pin record to home</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item dropdownItemBlack" href="#">History</a></li>
+
+            </ul>
+
+            <div class="modal" id="widgetSearchModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-bs-backdrop="false">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">Widget Search</h5>
+                            <button type="button" class="close close-btn" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="material-icons">close</i></span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-text">
+            <span>Pagination Here</span>
+        </div>
+    </div>
+</div>

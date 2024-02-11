@@ -1,0 +1,79 @@
+﻿@model ChartModel
+<link rel="stylesheet" href="~/css/widget.css" asp-append-version="true" />
+
+<style>
+
+	#container_ChartAreaBorder {
+		stroke-width:0;
+	}
+
+</style>
+<div class="widget">
+	<div class="widget-header">
+		<div class="widget-title">
+			<h6>Widget Title</h6>
+			<span>10 Records</span>
+		</div>
+		<div class="widget-actions">
+			<button class="widget-action-button"><i class="material-icons">filter_alt</i></button>
+			<button class="widget-action-button" id="chartSettingsDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
+
+			<ul class="dropdown-menu dropdown-menu-lg-start" aria-labelledby="chartSettingsDropdownMenu">
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Widget Settings</a></li>
+				<li><hr class="dropdown-divider" /></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Form Design</a></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Export Data Only</a></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Export Data with Chart</a></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Import</a></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Manage Field Lists(Views)</a></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Totals</a></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Reports</a></li>
+				<li><hr class="dropdown-divider" /></li>
+				<li><a class="dropdown-item dropdownItemBlack" href="#">Delete Widget</a></li>
+
+			</ul>
+		</div>
+	</div>
+	<div class="widget-body">
+		<div class="dashboard-widget">
+			<div class="widget-content">
+				<ejs-chart id="container" title="Sales Comparison" width="100%" height="350px">
+
+					<e-series-collection>
+						<e-series dataSource="@Model.ChartDataSource" fill="#4f42b7" xName="Month" yName="Apple" type="StackingBar" name="Apple">
+							<e-series-border width="1" color="white"></e-series-border>
+
+						</e-series>
+						<e-series dataSource="@Model.ChartDataSource" fill="#fba600" xName="Month" yName="Orange" type="StackingBar" name="Orange">
+							<e-series-border width="1" color="white"></e-series-border>
+
+						</e-series>
+						<e-series dataSource="@Model.ChartDataSource" fill="#1683ec" xName="Month" yName="Wastage" type="StackingBar" name="Wastage">
+							<e-series-border width="1" color="white"></e-series-border>
+
+						</e-series>
+					</e-series-collection>
+
+
+					<e-chart-primaryyaxis valueType="Double" labelFormat="{value}%" edgeLabelPlacement="Shift" interval="10" minimum="-10" maximum="60">
+						<e-linestyle width="0"></e-linestyle>
+						<e-majorgridlines width="1"></e-majorgridlines>
+						<e-minorgridlines width="1"></e-minorgridlines>
+					</e-chart-primaryyaxis>
+
+					<e-chart-primaryxaxis valueType="Category">
+						<e-majorticklines width="0"></e-majorticklines>
+						<e-minorticklines width="0"></e-minorticklines>
+						<e-minorgridlines width="0"></e-minorgridlines>
+						<e-linestyle width="1"></e-linestyle>
+
+						<e-majorgridlines width="0"></e-majorgridlines>
+
+					</e-chart-primaryxaxis>
+				</ejs-chart>
+			</div>
+		</div>
+	</div>
+
+	</div>
+

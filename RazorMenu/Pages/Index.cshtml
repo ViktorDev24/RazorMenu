@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="main-header">
+    <div class="title">
+        <h5>Dashboard Title</h5>
+    </div>
+    <div class="filter-section">
+        <button class="filter-button" type-button><i class="material-icons">filter_alt</i>Dashboard Filter</button>
+        <i class="material-icons">keyboard_arrow_down</i>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7">
+            @await Html.PartialAsync("_Datagrid")
+        </div>
+        <div class="col-md-5">
+            @await Html.PartialAsync("_Chart",Model.ChartModel)
+        </div>
+    </div>
+</div>
